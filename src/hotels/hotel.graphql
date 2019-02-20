@@ -1,0 +1,9 @@
+type Query {
+    hotels: [Hotel!]!
+    activeHotels: [Hotel!]!
+    hotel(id: ID!): Hotel
+}
+
+type Mutation {
+    updateHotelStatus(id: ID!, status: Status!): Hotel
+}

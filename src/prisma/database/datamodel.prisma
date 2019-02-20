@@ -1,0 +1,43 @@
+type User {
+  id: ID! @unique
+  name: String!
+  email: String! @unique
+  password: String!
+  status: Status! @default(value: "ACTIVE")
+  role: Role! @default(value: "USER")
+  reservations: [Reservation!]! @relation(name: "ReservationOnClient")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Hotel {
+  id: ID! @unique
+  name: String! @unique
+  address: String!
+  phone: String!
+  fax: String!
+  status: Status! @default(value: "ACTIVE")
+  reservations: [Reservation!]! @relation(name: "ReservationOnHotel")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Reservation {
+  id: ID! @unique
+  arrivalDate: DateTime!
+  departureDate: DateTime!
+  bookedBy: User! @relation(name: "ReservationOnClient")
+  hotel: Hotel! @relation(name: "ReservationOnHotel")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+}
+
+enum Role {
+  ADMIN
+  USER
+}

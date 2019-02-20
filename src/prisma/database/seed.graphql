@@ -1,0 +1,72 @@
+mutation {
+    admin: createUser(data: {
+        name: "System Admin"
+        email: "admin@hotelstagram.com"
+        password: "abc123"
+        status: ACTIVE
+        role: ADMIN
+    }) {
+        id
+        name
+    }
+    hotel1: createHotel(data: {
+        name: "Hilton Airport Hotel"
+        address: "5467 Airport Drive, San Bruno CA 94136"
+        phone: "650 546-4657"
+        fax: "650 546-4658"
+        status: ACTIVE
+    }) {
+        id
+        name
+    }
+    hotel2: createHotel(data: {
+        name: "Fairmont Hotel"
+        address: "234 Fairmont Drive, Berkeley CA 94536"
+        phone: "510 636-4657"
+        fax: "510 636-4658"
+        status: ACTIVE
+    }) {
+        id
+        name
+    }
+    hotel3: createHotel(data: {
+        name: "St. Franscis Hotel"
+        address: "234 Market Street, San Francisco CA 94516"
+        phone: "415 636-4657"
+        fax: "415 636-4658"
+        status: ACTIVE
+    }) {
+        id
+        name
+    }
+    hotel4: createHotel(data: {
+        name: "Mariott Hotel"
+        address: "650 Santa Clara, San Jose CA 94521"
+        phone: "408 636-4657"
+        fax: "408 636-4658"
+        status: ACTIVE
+    }) {
+        id
+        name
+    }
+    hotel5: createHotel(data: {
+        name: "Fremont Hotel"
+        address: "234 Fremont Blvd, Fremont CA 94539"
+        phone: "510 236-4657"
+        fax: "510 236-4658"
+        status: ACTIVE
+    }) {
+        id
+        name
+    }
+    hotel6: createHotel(data: {
+        name: "Hyatt Hotel"
+        address: "234 3rd Ave, San Mateo CA 94436"
+        phone: "650 636-4657"
+        fax: "650 636-4658"
+        status: ACTIVE
+    }) {
+        id
+        name
+    }
+}
